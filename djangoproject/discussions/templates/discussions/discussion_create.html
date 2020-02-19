@@ -1,0 +1,112 @@
+
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAMDL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'discussions/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'discussions/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'discussions/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'discussions/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'discussions/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'discussions/owl.theme.default.min.css' %}">
+    <link href="{% static 'discussions/stylesignin.css' %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'discussions/images/favicon.ico' %}">
+
+
+    <link rel="stylesheet" href="{% static 'discussions/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'discussions/fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'discussions/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'discussions/style.css' %}">
+
+  </head>
+  <body>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <header class="site-navbar py-4 bg-white" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">W.A.M.D.L</a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="/">Home</a></li>
+                <li class="active"><a href=" ">Collection</a></li>
+                <li><a href="/about">About</a></li>
+                {% if user.is_authenticated %}
+
+                <li><a href="/homepage">Sign Out</a></li>
+                </li>
+                <li><a href="/transcription" class="highlight">Transcription</a></li>
+                {% else %}
+                <li><a href="/accounts">Sign In</a></li>
+                {% endif %}
+                <li><a href="/admin">Admin</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+            <a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
+          </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+  <div class="create-article">
+    <center>
+      <br>
+    <h2>Upload New Transcription</h2>
+    <br>
+    <div class="col-md-6 col-lg-3 mb-4">
+    <p><form class="site-form" action="/discussions/create/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Upload">
+    </form></p>
+  </div>
+</center>
+  </div>
+  <script src="{% static 'discussions/js/slugify.js' %}"></script>
+  <script src="{% static 'discussions/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'discussions/js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'discussions/js/jquery-ui.js' %}"></script>
+    <script src="{% static 'discussions/js/popper.min.js' %}"></script>
+    <script src="{% static 'discussions/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'discussions/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'discussions/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'discussions/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'discussions/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'discussions/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'discussions/js/aos.js' %}"></script>
+    <script src="{% static 'discussions/js/main.js' %}"></script>
+</body>
+</html>

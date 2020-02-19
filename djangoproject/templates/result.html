@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'posts/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'posts/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/owl.theme.default.min.css' %}">
+    <link href="{% static 'posts/stylesignin.css' %}" rel="stylesheet" type="text/css">
+      <link rel="shortcut icon" type="image/png" href="{% static 'posts/images/favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'posts/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'posts/fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'posts/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Success</title>
+      <style>
+          .left{
+              width: 40%;
+              float: left;
+              position: relative;
+              top: 70px;
+          }
+          .right{
+              width: 50%;
+              float: left;
+              position: relative;
+              top: 70px;
+          }
+          :focus{outline:20;}
+          .sizeField{
+            width:500px;
+            border:groove;
+            font-size: 115%;
+            font-family: sans-serif;
+          }
+          .sizeText{
+            width:500px;
+            height:500px;
+            font-size: 115%;
+            border: ridge;
+            font-family: sans-serif;
+          }
+      </style>
+  </head>
+
+
+  <body>
+    <div class="site-wrap">
+
+      <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+      <header class="site-navbar py-4 bg-white" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-11 col-xl-2">
+              <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">W.A.M.D.L</a></h1>
+            </div>
+            <div class="col-12 col-md-10 d-none d-xl-block">
+              <nav class="site-navigation position-relative text-right" role="navigation">
+
+                <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/discussions">Collection</a></li>
+                  <li><a href="/about">About</a></li>
+                  {% if user.is_authenticated %}
+                  <li><a href="/homepage">Sign Out</li>
+                  <li><a href="/transcription" class="highlight">Transcription</a></li>
+                  {% else %}
+                  <li><a href="/accounts">Sign In</a></li>
+                  {% endif %}
+                  <li><a href="/admin">Admin</li>
+                </ul>
+              </nav>
+            </div>
+
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+              <a href="#" class="site-menu-toggle js-menu-toggle text-black">
+                <span class="icon-menu h3"></span></a>
+              </div>
+
+            </div>
+
+          </div>
+      </header>
+      </div>
+
+  	 <!-- <div id="wrapper" style="width:1200px; display:table;">
+  			<div class='left'><h2>Source</h2>
+  			{%  for each in object_list %}
+  				{% if each.image %}
+  				<img src='{{ each.image.url }}' height="600px" width="450px">
+  				<p style="display: none;">{{ each.image.url }}</p>
+  			</div>
+  			<div class='right'>
+  				<h2>Response</h2>
+  			</div>
+  			<div class='right'>
+          <form action="{% url 'save' %}"
+          method="post" autocomplete="off">
+          {% csrf_token %}
+            <input
+              type="text"
+              class="sizeField"
+              value="Edit this Title"
+              name="title"
+              autocomplete="off"
+              required
+            />
+          <br>
+          <textarea
+            class="sizeText"
+            rows="20"
+            col="20"
+            name="text"
+            required
+            >{{ restext }}</textarea
+          >
+          <br>
+          <input
+            type="submit"
+            class="btn btn-success"
+            value="Save to Database"
+          />
+        </form>
+  				{% endif %}
+  			{% endfor %}
+  			</div>
+  			<div class="right"><a type="button" id ="saveButton" target="textarea" download="trancribedFile.txt" href="#" >Download Text</a></div>
+  			<h3 class="right">click <a href='/'>here </a>to go for HOME</h3>
+  		</div> -->
+
+      <section class="site-section">
+        <div class="container">
+          <div class="row">
+              <div class="col-md-7 col-lg-5 mb-lg-6">
+                <div class="h-entry">
+                  <div class="media-1-content">
+                    <h1>Source</h1>
+              			{%  for each in object_list %}
+              				{% if each.image %}
+              				<img src='{{ each.image.url }}' height="600px" width="450px">
+              				<p style="display: none;">{{ each.image.url }}</p>
+                  </div>
+                </div>
+              </div>
+                  <div class="col-md-7 col-lg-5 mb-lg-6">
+                    <div class="h-entry">
+                  <div class="media-1-content">
+                    <h1>Response</h1>
+                      <form action="{% url 'save' %}"
+                      method="post" autocomplete="off">
+                      {% csrf_token %}
+                        <input
+                          type="text"
+                          class="sizeField"
+                          value="Edit this Title"
+                          name="title"
+                          autocomplete="off"
+                          required
+                        />
+                      <br>
+                      <textarea
+                        class="sizeText"
+                        rows="20"
+                        col="20"
+                        name="text"
+                        required
+                        >{{ restext }}</textarea>
+                      <br>
+                      <center>
+                      <input
+                        type="submit"
+                        class="btn btn-success"
+                        value="Save to Database"
+                      /></center>
+                    </form>
+              				{% endif %}
+              			{% endfor %}
+                    <center>
+                    <p>Click <a type="button" id ="saveButton" target="textarea" download="trancribedFile.txt" href="#" >here</a> to download the transcribed text</p>
+                    </center>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      <script src="{% static 'posts/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'posts/js/jquery-migrate-3.0.1.min.js' %}"></script>
+      <script src="{% static 'posts/js/jquery-ui.js' %}"></script>
+      <script src="{% static 'posts/js/popper.min.js' %}"></script>
+      <script src="{% static 'posts/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'posts/js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'posts/js/jquery.stellar.min.js' %}"></script>
+      <script src="{% static 'posts/js/jquery.countdown.min.js' %}"></script>
+      <script src="{% static 'posts/js/jquery.magnific-popup.min.js' %}"></script>
+      <script src="{% static 'posts/js/bootstrap-datepicker.min.js' %}"></script>
+      <script src="{% static 'posts/js/aos.js' %}"></script>
+
+      <script src="{% static 'posts/js/typed.js' %}"></script>
+                <script>
+                var typed = new Typed('.typed-words', {
+                strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                typeSpeed: 80,
+                backSpeed: 80,
+                backDelay: 4000,
+                startDelay: 1000,
+                loop: true,
+                showCursor: true
+                });
+                </script>
+
+      <script src="{% static 'posts/js/main.js' %}"></script>
+      <!-- Latest compiled and minified jQuery -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  </body>
+  </html>
