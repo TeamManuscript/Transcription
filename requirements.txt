@@ -144,7 +144,7 @@ gpyocr==1.4
 graphviz==0.11.1
 grpcio==1.22.0
 h5py==2.9.0
-httplib2==0.13.0
+httplib2==0.18.0
 idna==2.8
 imutils==0.5.2
 ipykernel==5.1.1
