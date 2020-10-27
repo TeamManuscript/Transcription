@@ -103,7 +103,7 @@ chardet==3.0.4
 circus==0.15.0
 Click==7.0
 colorama==0.4.1
-cryptography==2.7
+cryptography==3.2
 cssselect==1.0.3
 cycler==0.10.0
 decorator==4.4.0
