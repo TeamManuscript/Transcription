@@ -180,7 +180,7 @@ mkl-random==1.0.2
 msrest==0.6.8
 msrestazure==0.6.1
 mysqlclient==1.4.2
-nbconvert==5.5.0
+nbconvert==6.5.1
 nbformat==4.4.0
 notebook==6.0.0
 numpy==1.16.4
